@@ -11,3 +11,4 @@
 
 # Guid 
 - https://rxhl.notion.site/AWS-Solution-Architect-Associate-698442acf94a484caa56477344dafc9d
+- https://tutorialsdojo.com/aws-certified-solutions-architect-associate-saa-c03/

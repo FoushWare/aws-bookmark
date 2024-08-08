@@ -53,6 +53,9 @@
 ## AWS Organizations
 - managment service that allows you to manage multiple accounts in your organization in a central place this allow you to handle the billing in one place and get price discount
 
+EC2 
+![Logo of EC2](https://raw.githubusercontent.com/FoushWare/aws-bookmark/master/1_joI3hN7W6ZtT-xda7Mp8Bw.webp?token=GHSAT0AAAAAACUSL73VWXIS6GAWUTWESOUMZVUUYZQ)
+====================
 
 
 

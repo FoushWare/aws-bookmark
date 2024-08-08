@@ -22,6 +22,13 @@
 ==================
 ![Logo](https://raw.githubusercontent.com/FoushWare/aws-bookmark/master/1_nQuYpC8oelxaqke2VXPw2w.webp?token=GHSAT0AAAAAACUSL73UEIXQBH7ZAQKCSGJKZVURI6A)
 
+### key features to IAM 
+ - global not depend on regions
+ - user can created and have least permissions and get permissions as needed
+ - using roles to grant access is more secure than sharing access keys and secret keys
+ - can manage many accounts through I AM Center or other providers based on SAML
+ - allow you to set up custom password policy
+
 
 
 

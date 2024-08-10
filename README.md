@@ -15,6 +15,9 @@
 - https://rxhl.notion.site/AWS-Solution-Architect-Associate-698442acf94a484caa56477344dafc9d
 - https://tutorialsdojo.com/aws-certified-solutions-architect-associate-saa-c03/
 
+# practise exam questions
+- https://www.youtube.com/watch?v=Wee_F8_k8s4
+- ..... search for another courses , video 
 
 # My-notes 
 
@@ -59,6 +62,7 @@ EC2
 ![Logo](https://raw.githubusercontent.com/FoushWare/aws-bookmark/master/1_joI3hN7W6ZtT-xda7Mp8Bw.webp?token=GHSAT0AAAAAACUSL73UEN5C4I3K675JJSZAZVUU7TA)
 
 ====================
-
+- gives you full control of computing resources like [storage,processor,Network, Operating systems]
+- increase/decrease capacity in minutes
 
 

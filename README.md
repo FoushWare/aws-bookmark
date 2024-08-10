@@ -64,5 +64,36 @@ EC2
 ====================
 - gives you full control of computing resources like [storage,processor,Network, Operating systems]
 - increase/decrease capacity in minutes
+- the root volume is virtual so it's used for the OS
+- we can add EBS volumes ant it is deleted after terminate the instance
+- There is a script that can run after boot up it's called userData
+- you need to create a key pair [public,private] to access it
+
+EC2 Pricing
+============
+1- on-Demand:
+fixed rate for compute capacity per hour OR per second with no commitment or up front const . Typically used for short term 
+
+2- reserved:
+
+you have capacity reservation so you have discount compared to on-demond but it requires to have contract 1-3 years -- used for applications which have steady predictable use.However, you can't move between regions 
+
+Types of Reserved Pricing :
+
+- standard: discount of 75%
+- convertible: discount 54% change between instances types
+- scheduled reserved instances: can launch within time window
+
+
+
+3- Spot 
+
+
+
+
+
+
+
+
 
 

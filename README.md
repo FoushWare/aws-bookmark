@@ -2,6 +2,7 @@
 
 # hands-on course 
 - https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/?kw=aws+sol&src=sac&couponCode=2021PM25
+- https://explore.skillbuilder.aws/learn/learning_plan/view/1046/solutions-architect-learning-plan-includes-labs
 - https://aws.amazon.com/training/learn-about/architect/
 - [this is my archeticture](https://aws.amazon.com/architecture/this-is-my-architecture/?tma.sort-by=item.additionalFields.airDate&tma.sort-order=desc&awsf.category=*all&awsf.industry=*all&awsf.language=*all&awsf.show=*all&awsf.product=*all)
 
@@ -88,7 +89,43 @@ Types of Reserved Pricing :
 
 
 
-3- Spot 
+3- Spot : when aws has excess capicity it make discount reach 90% but they can take the capicity back -- don't use spot with critical apps that needs to be online all the time 
+4- Dedicated Hosts: EC2 dedicated for specific you like oracle 
+
+** spot fleets
+- collection of spot instances and optionally on-demand instances .attempt to launch bunch of them to meet a certain capicity
+- allocation based on spot fleet request
+
+## spot fleet strategies 
+- lowest Price => choose the fleet pool with lowest price.
+- Diversified  =>  distributed across all pools.
+- Capacity Optimised => choose from pools with optimal capacity
+
+instancePoolsToUseCount=> Distributed across the number of pools you specify __only can be used at lowest price option
+
+## Security Groups
+- virtual firewall for Ec2 instances
+- all inbound traffic are blocked by default but all outbound traffic is allowed
+- you add rules to security groups to allow traffic in.
+- security groups are permitive this means you only use it to allow not to prevent or deny
+- you can have more than security groups attached to EC2 instance
+
+## EC2 Hibernate
+- can be used to save the machine state
+- it stories in-memeory RAM to storage EBS
+- it can last more than 60 days
+- once in hibrnate mode you are not charged you only charged for Elastic IP and other attached volums 
+
+## EC2Placement Groups
+- place EC2 instance to minimise failure
+- placement groups must be unique across your account
+- no charge associated with creating placement Groups
+
+## types of placement groups:
+
+1- clustered => the instances close together in same AZ aimed to provide high throughput and low network latency
+2- spread  => can span multiple AZ used for smalll number of application to prevent failure 
+3- partioned => .....
 
 
 

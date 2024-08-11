@@ -20,7 +20,12 @@
 - https://www.youtube.com/watch?v=Wee_F8_k8s4
 - https://github.com/Ditectrev/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Practice-Tests-Exams-Questions-Answers?tab=readme-ov-file#which-set-of-amazon-s3-features-helps-to-prevent-and-recover-from-accidental-data-loss
 - 
-- ..... search for another courses , video 
+- ..... search for another courses , video
+
+
+# Learn by gaming
+- https://aws.amazon.com/training/digital/aws-cloud-quest/
+- https://explore.skillbuilder.aws/learn/learning_plan/view/1046/solutions-architect-learning-plan-includes-labs
 
 # My-notes 
 

@@ -391,6 +391,7 @@ instancePoolsToUseCount=> Distributed across the number of pools you specify __o
 - EC2 instances can be started in placement groups:
     - Cluster
     - Spread
+    - Partition
 
 
 

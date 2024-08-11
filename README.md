@@ -22,7 +22,7 @@
 # practise exam questions
 - https://www.youtube.com/watch?v=Wee_F8_k8s4
 - https://github.com/Ditectrev/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Practice-Tests-Exams-Questions-Answers?tab=readme-ov-file#which-set-of-amazon-s3-features-helps-to-prevent-and-recover-from-accidental-data-loss
-- 
+- https://skillbuilder.aws/search?searchText=exam+prep+solutions+architect&page=1
 - ..... search for another courses , video
 
 

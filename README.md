@@ -6,6 +6,7 @@
 - https://aws.amazon.com/training/learn-about/architect/
 - [this is my archeticture](https://aws.amazon.com/architecture/this-is-my-architecture/?tma.sort-by=item.additionalFields.airDate&tma.sort-order=desc&awsf.category=*all&awsf.industry=*all&awsf.language=*all&awsf.show=*all&awsf.product=*all)
 - https://aws.amazon.com/education/awseducate/
+- https://aws.amazon.com/training/digital/aws-simulearn/
 
 # notes 
 - [set of articles](https://chloemcateer.medium.com/aws-solution-architect-associate-exam-study-notes-b6c5884ee500)

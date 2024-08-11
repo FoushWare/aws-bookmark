@@ -304,6 +304,9 @@ instancePoolsToUseCount=> Distributed across the number of pools you specify __o
     - **Spread** - spread instances across underlying hardware (max 7 instances per group per AZ)
     - **Partition** - spread instances across many different partitions (which rely on different sets of racks) within an AZ. Scale to 100s of EC2 instances per group (Hadoop, Cassandra, Kafka)
 
+![clustered](https://github.com/FoushWare/aws-bookmark/blob/0d45f198333c6c3e3f34cd119a2e6fd834ed1c74/Capture.PNG)
+![spread](https://github.com/FoushWare/aws-bookmark/blob/0d45f198333c6c3e3f34cd119a2e6fd834ed1c74/Capture2.PNG)
+![partioned](https://github.com/FoushWare/aws-bookmark/blob/0d45f198333c6c3e3f34cd119a2e6fd834ed1c74/Capture3.PNG)
 ### Placement Groups - Cluster
 
 - Pros: Great network (10Gbps bandwidth between instances)

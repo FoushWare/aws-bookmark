@@ -1,4 +1,7 @@
-
+## my plane :
+- [ ] study AWS solution architect
+- [ ] deploy mono-repo react application
+- [ ] deploy mico-frontend reactjs
 
 # hands-on course 
 - https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/?kw=aws+sol&src=sac&couponCode=2021PM25

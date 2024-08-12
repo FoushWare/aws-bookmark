@@ -397,6 +397,7 @@ instancePoolsToUseCount=> Distributed across the number of pools you specify __o
     - Partition
 
 ============Load Balancer ======
+![load balancer](https://github.com/FoushWare/aws-bookmark/blob/86ba8fa08c65aa2fbd5fd56ed28b349c36409759/1_qclNeMJFxowiCKouU4Dkag.webp)
 # Elastic Load Balancers
 
 ## Scalability and High Availability

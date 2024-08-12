@@ -1,4 +1,4 @@
-## my plane :
+## my plan :
 - [ ] study AWS solution architect
 - [ ] deploy mono-repo react application
 - [ ] deploy mico-frontend reactjs

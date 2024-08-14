@@ -36,7 +36,7 @@
 # projects 
 - Deploy wordpress app https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials-wordpress.html
 - deploy wordpress with an external Amazon RDS database to Elastic Beanstalk  https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/php-hawordpress-tutorial.html#php-wordpress-tutorial-prereqs
-
+- build serverless application https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-amplify-bedrock-cognito-gen-ai/
 
 
 

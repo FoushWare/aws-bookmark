@@ -33,6 +33,12 @@
 - https://aws.amazon.com/training/digital/aws-cloud-quest/
 - https://explore.skillbuilder.aws/learn/learning_plan/view/1046/solutions-architect-learning-plan-includes-labs
 
+# projects 
+- Deploy wordpress app https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials-wordpress.html
+
+
+
+
 # My-notes 
 
 -> IAM service

@@ -3,6 +3,10 @@
 - [ ] deploy mono-repo react application
 - [ ] deploy mico-frontend reactjs
 
+
+# exame questions 
+- https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c03/view/
+
 # hands-on course 
 - https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/?kw=aws+sol&src=sac&couponCode=2021PM25
 - https://explore.skillbuilder.aws/learn/learning_plan/view/1046/solutions-architect-learning-plan-includes-labs

@@ -1,3 +1,6 @@
+
+![AWS solution Architect](https://github.com/FoushWare/aws-bookmark/blob/16706fbb956591d0faeaff684ecf64b633975652/1_K1v_Ozyt3n90ThVR8N3J8A.webp)
+
 ## my plan :
 - [ ] study AWS solution architect
 - [ ] deploy mono-repo react application

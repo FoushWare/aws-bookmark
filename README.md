@@ -45,3 +45,6 @@
 - deploy wordpress with an external Amazon RDS database to Elastic Beanstalk  https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/php-hawordpress-tutorial.html#php-wordpress-tutorial-prereqs
 - build serverless application https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-amplify-bedrock-cognito-gen-ai/
 
+## articles
+- Using AWS Like A Pro: Best Practices From Solutions Architects : https://medium.com/@jankammerath/using-aws-like-a-pro-best-practices-from-solutions-architects-633a1e316be2
+

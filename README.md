@@ -6,6 +6,7 @@
 - [ ] deploy mono-repo react application
 - [ ] deploy mico-frontend reactjs
 
+# path to examination https://medium.com/@kelvi030117/path-to-aws-solution-architect-associate-ed2c34e506df
 
 # exame questions 
 - https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c03/view/

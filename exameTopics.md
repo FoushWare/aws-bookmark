@@ -104,5 +104,29 @@ An application runs on an Amazon EC2 instance in a VPC. The application processe
 - **Option C:** An instance profile grants permissions to access S3 but does not ensure private network connectivity, as it still requires internet or a VPC endpoint.
 - **Option D:** API Gateway with a private link is not intended for direct S3 access and would create unnecessary complexity and overhead.
 
+## Question 5
+
+A company is hosting a web application on AWS using a single Amazon EC2 instance that stores user-uploaded documents in an Amazon EBS volume. For better scalability and availability, the company duplicated the architecture and created a second EC2 instance and EBS volume in another Availability Zone, placing both behind an Application Load Balancer. After completing this change, users reported that, each time they refreshed the website, they could see one subset of their documents or the other, but never all of the documents at the same time.  
+**What should a solutions architect propose to ensure users see all of their documents at once?**
+
+- [ ] **A.** Copy the data so both EBS volumes contain all the documents.
+- [ ] **B.** Configure the Application Load Balancer to direct a user to the server with the documents.
+- [ ] **C.** Copy the data from both EBS volumes to Amazon EFS. Modify the application to save new documents to Amazon EFS.
+- [ ] **D.** Configure the Application Load Balancer to send the request to both servers. Return each document from the correct server.
+
+### Answer and Explanation
+
+**Correct Answer:** **C.** Copy the data from both EBS volumes to Amazon EFS. Modify the application to save new documents to Amazon EFS.
+
+#### Explanation:
+
+- **Amazon EFS (Elastic File System)** provides a shared, scalable storage solution that can be accessed by multiple EC2 instances across Availability Zones. By storing documents in EFS, both instances can read and write to a single storage location, ensuring that users see a consistent set of documents regardless of which instance handles their request.
+- **Scalability and Availability:** EFS is designed for multi-AZ access, making it ideal for high availability and scalability across multiple instances.
+
+#### Why Other Options Are Less Suitable:
+
+- **Option A:** Copying data between EBS volumes manually would be difficult to keep consistent, particularly as new documents are uploaded.
+- **Option B:** Directing users to a specific server does not solve the issue of data consistency and may fail if an instance becomes unavailable.
+- **Option D:** Sending requests to both servers adds unnecessary complexity and would not fully address consistency unless both EBS volumes are kept in sync, which is challenging with EBS.
 
 

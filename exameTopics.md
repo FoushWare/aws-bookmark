@@ -53,4 +53,56 @@ A company needs the ability to analyze the log files of its proprietary applicat
 - **Option D:** AWS Glue and Amazon EMR with Apache Spark are more suited for complex ETL and large-scale analytics, which would add significant operational overhead for on-demand querying.
 
 
+## Question 3
+
+A company uses AWS Organizations to manage multiple AWS accounts for different departments. The management account has an Amazon S3 bucket that contains project reports. The company wants to limit access to this S3 bucket to only users of accounts within the organization in AWS Organizations.  
+**Which solution meets these requirements with the LEAST amount of operational overhead?**
+
+- [ ] **A.** Add the aws PrincipalOrgID global condition key with a reference to the organization ID to the S3 bucket policy.
+- [ ] **B.** Create an organizational unit (OU) for each department. Add the aws:PrincipalOrgPaths global condition key to the S3 bucket policy.
+- [ ] **C.** Use AWS CloudTrail to monitor the CreateAccount, InviteAccountToOrganization, LeaveOrganization, and RemoveAccountFromOrganization events. Update the S3 bucket policy accordingly.
+- [ ] **D.** Tag each user that needs access to the S3 bucket. Add the aws:PrincipalTag global condition key to the S3 bucket policy.
+
+### Answer and Explanation
+
+**Correct Answer:** **A.** Add the aws PrincipalOrgID global condition key with a reference to the organization ID to the S3 bucket policy.
+
+#### Explanation:
+
+- **PrincipalOrgID** is a global condition key that allows access to be restricted to all accounts within a specific AWS Organization. By adding this key to the S3 bucket policy with the organization ID, the bucket can be securely accessed only by users in accounts within the organization.
+- **Minimal Operational Overhead:** This approach is straightforward to implement, requires no additional resources or tracking, and automatically applies access controls across all accounts within the organization.
+
+#### Why Other Options Are Less Suitable:
+
+- **Option B:** Using `aws:PrincipalOrgPaths` would require organizing accounts into specific OUs and managing policies based on path structure, which increases complexity.
+- **Option C:** Relying on CloudTrail to monitor account changes and manually update policies would create significant operational overhead.
+- **Option D:** Tagging individual users and managing permissions with `aws:PrincipalTag` is complex and difficult to scale, especially with multiple users across departments.
+
+
+## Question 4
+
+An application runs on an Amazon EC2 instance in a VPC. The application processes logs that are stored in an Amazon S3 bucket. The EC2 instance needs to access the S3 bucket without connectivity to the internet.  
+**Which solution will provide private network connectivity to Amazon S3?**
+
+- [ ] **A.** Create a gateway VPC endpoint to the S3 bucket.
+- [ ] **B.** Stream the logs to Amazon CloudWatch Logs. Export the logs to the S3 bucket.
+- [ ] **C.** Create an instance profile on Amazon EC2 to allow S3 access.
+- [ ] **D.** Create an Amazon API Gateway API with a private link to access the S3 endpoint.
+
+### Answer and Explanation
+
+**Correct Answer:** **A.** Create a gateway VPC endpoint to the S3 bucket.
+
+#### Explanation:
+
+- **Gateway VPC Endpoint** for Amazon S3 allows EC2 instances in a VPC to privately connect to S3 without requiring an internet connection, as it enables secure and private access over the AWS internal network.
+- **Minimal Operational Overhead:** This solution is simple to implement and provides the necessary private connectivity directly between the EC2 instance and the S3 bucket without additional configurations.
+
+#### Why Other Options Are Less Suitable:
+
+- **Option B:** Exporting logs through CloudWatch Logs adds unnecessary complexity and costs, as it doesn’t provide a direct private connection to S3 for the EC2 instance.
+- **Option C:** An instance profile grants permissions to access S3 but does not ensure private network connectivity, as it still requires internet or a VPC endpoint.
+- **Option D:** API Gateway with a private link is not intended for direct S3 access and would create unnecessary complexity and overhead.
+
+
 

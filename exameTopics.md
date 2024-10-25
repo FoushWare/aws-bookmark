@@ -130,3 +130,129 @@ A company is hosting a web application on AWS using a single Amazon EC2 instance
 - **Option D:** Sending requests to both servers adds unnecessary complexity and would not fully address consistency unless both EBS volumes are kept in sync, which is challenging with EBS.
 
 
+## Question 6
+
+A company uses NFS to store large video files in on-premises network attached storage. Each video file ranges in size from 1 MB to 500 GB. The total storage is 70 TB and is no longer growing. The company decides to migrate the video files to Amazon S3. The company must migrate the video files as soon as possible while using the least possible network bandwidth.  
+**Which solution will meet these requirements?**
+
+- [ ] **A.** Create an S3 bucket. Create an IAM role that has permissions to write to the S3 bucket. Use the AWS CLI to copy all files locally to the S3 bucket.
+- [ ] **B.** Create an AWS Snowball Edge job. Receive a Snowball Edge device on premises. Use the Snowball Edge client to transfer data to the device. Return the device so that AWS can import the data into Amazon S3.
+- [ ] **C.** Deploy an S3 File Gateway on premises. Create a public service endpoint to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.
+- [ ] **D.** Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.
+
+### Answer and Explanation
+
+**Correct Answer:** **B.** Create an AWS Snowball Edge job. Receive a Snowball Edge device on premises. Use the Snowball Edge client to transfer data to the device. Return the device so that AWS can import the data into Amazon S3.
+
+#### Explanation:
+
+- **AWS Snowball Edge** provides a high-speed, offline data transfer solution, ideal for large-scale data migration without using network bandwidth. Snowball Edge devices are shipped to the customer’s premises, where data is loaded locally, then returned to AWS for direct import into S3.
+- **Minimal Network Usage:** This solution avoids reliance on the network, which is beneficial for transferring large datasets quickly.
+
+#### Why Other Options Are Less Suitable:
+
+- **Option A:** Using the AWS CLI to upload 70 TB over the network would consume a significant amount of bandwidth and may not be feasible within a short timeframe.
+- **Option C:** S3 File Gateway would still rely on network bandwidth, potentially slowing down the migration process.
+- **Option D:** AWS Direct Connect provides a dedicated line but would require setup time and potentially higher costs for a one-time migration.
+
+## Question 7
+
+A company has an application that ingests incoming messages. Dozens of other applications and microservices then quickly consume these messages. The number of messages varies drastically and sometimes increases suddenly to 100,000 each second. The company wants to decouple the solution and increase scalability.  
+**Which solution meets these requirements?**
+
+- [ ] **A.** Persist the messages to Amazon Kinesis Data Analytics. Configure the consumer applications to read and process the messages.
+- [ ] **B.** Deploy the ingestion application on Amazon EC2 instances in an Auto Scaling group to scale the number of EC2 instances based on CPU metrics.
+- [ ] **C.** Write the messages to Amazon Kinesis Data Streams with a single shard. Use an AWS Lambda function to preprocess messages and store them in Amazon DynamoDB. Configure the consumer applications to read from DynamoDB to process the messages.
+- [ ] **D.** Publish the messages to an Amazon Simple Notification Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SQS) subscriptions. Configure the consumer applications to process the messages from the queues.
+
+### Answer and Explanation
+
+**Correct Answer:** **D.** Publish the messages to an Amazon Simple Notification Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SQS) subscriptions. Configure the consumer applications to process the messages from the queues.
+
+#### Explanation:
+
+- **Amazon SNS** is ideal for applications where messages need to be sent to multiple destinations, as it can broadcast messages to multiple SQS queues. 
+- **Amazon SQS** provides scalability by allowing consumers to pull messages independently, which helps handle large surges in message volume. SQS scales automatically and supports decoupling, allowing each consumer to process messages independently.
+
+#### Why Other Options Are Less Suitable:
+
+- **Option A:** Amazon Kinesis Data Analytics is more suited for real-time data analytics rather than decoupling and distributing high-volume messages to multiple applications.
+- **Option B:** Scaling EC2 instances in an Auto Scaling group based on CPU utilization does not inherently support message queuing or decoupling.
+- **Option C:** A single Kinesis shard would not handle 100,000 messages per second and would likely result in bottlenecks. Multiple shards would be necessary, but Kinesis Data Streams is more complex and suited for streaming rather than broad message distribution.
+
+## Question 8
+
+A company is migrating a distributed application to AWS. The application serves variable workloads. The legacy platform consists of a primary server that coordinates jobs across multiple compute nodes. The company wants to modernize the application with a solution that maximizes resiliency and scalability.  
+**How should a solutions architect design the architecture to meet these requirements?**
+
+- [ ] **A.** Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling to use scheduled scaling.
+- [ ] **B.** Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling based on the size of the queue.
+- [ ] **C.** Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure AWS CloudTrail as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the primary server.
+- [ ] **D.** Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure Amazon EventBridge (Amazon CloudWatch Events) as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the compute nodes.
+
+### Answer and Explanation
+
+**Correct Answer:** **B.** Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling based on the size of the queue.
+
+#### Explanation:
+
+- **Amazon SQS** provides a reliable queue to decouple and distribute tasks across compute nodes, which improves the system's resiliency and scalability.
+- **Auto Scaling based on SQS queue size** allows the number of compute nodes to scale dynamically with the workload, automatically adjusting to changes in job volume without a primary server dependency.
+
+#### Why Other Options Are Less Suitable:
+
+- **Option A:** Scheduled scaling does not offer real-time scaling based on workload demand, making it less resilient to sudden workload changes.
+- **Option C:** AWS CloudTrail is not designed for job distribution; it monitors API calls and activity within an AWS account.
+- **Option D:** Amazon EventBridge is event-driven, but it is not typically used for coordinating a high-volume job distribution system like SQS.
+
+## Question 9
+
+A company is running an SMB file server in its data center. The file server stores large files that are accessed frequently for the first few days after the files are created. After 7 days, the files are rarely accessed. The total data size is increasing and is close to the company's total storage capacity. A solutions architect must increase the company's available storage space without losing low-latency access to the most recently accessed files. The solutions architect must also provide file lifecycle management to avoid future storage issues.  
+**Which solution will meet these requirements?**
+
+- [ ] **A.** Use AWS DataSync to copy data that is older than 7 days from the SMB file server to AWS.
+- [ ] **B.** Create an Amazon S3 File Gateway to extend the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.
+- [ ] **C.** Create an Amazon FSx for Windows File Server file system to extend the company's storage space.
+- [ ] **D.** Install a utility on each user's computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days.
+
+### Answer and Explanation
+
+**Correct Answer:** **B.** Create an Amazon S3 File Gateway to extend the company's storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.
+
+#### Explanation:
+
+- **Amazon S3 File Gateway** allows seamless integration with existing SMB applications, providing low-latency access to frequently accessed files while extending storage capacity.
+- By using an **S3 Lifecycle policy**, files can automatically transition to **S3 Glacier Deep Archive** after 7 days, optimizing storage costs and managing lifecycle efficiently.
+
+#### Why Other Options Are Less Suitable:
+
+- **Option A:** AWS DataSync would be suitable for transferring data but does not provide low-latency access to recent files.
+- **Option C:** Amazon FSx for Windows File Server is an option but may be more complex and costly than necessary for just extending storage capacity and lifecycle management.
+- **Option D:** Installing a utility on each user's computer is not ideal for seamless integration and does not provide a lifecycle management feature like S3 File Gateway.
+
+## Question 10
+
+A company is building an ecommerce web application on AWS. The application sends information about new orders to an Amazon API Gateway REST API to process. The company wants to ensure that orders are processed in the order that they are received.  
+**Which solution will meet these requirements?**
+
+- [ ] **A.** Use an API Gateway integration to publish a message to an Amazon Simple Notification Service (Amazon SNS) topic when the application receives an order. Subscribe an AWS Lambda function to the topic to perform processing.
+- [ ] **B.** Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) FIFO queue when the application receives an order. Configure the SQS FIFO queue to invoke an AWS Lambda function for processing.
+- [ ] **C.** Use an API Gateway authorizer to block any requests while the application processes an order.
+- [ ] **D.** Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) standard queue when the application receives an order. Configure the SQS standard queue to invoke an AWS Lambda function for processing.
+
+### Answer and Explanation
+
+**Correct Answer:** **B.** Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) FIFO queue when the application receives an order. Configure the SQS FIFO queue to invoke an AWS Lambda function for processing.
+
+#### Explanation:
+
+- **Amazon SQS FIFO (First-In-First-Out) queue** ensures that messages are processed in the exact order they are sent. This feature is crucial for an ecommerce application that requires orders to be processed in the order they are received.
+- Integrating the API Gateway with an SQS FIFO queue allows the application to reliably manage order processing, maintaining the correct sequence of order handling.
+
+#### Why Other Options Are Less Suitable:
+
+- **Option A:** SNS is designed for fan-out scenarios and does not guarantee message order, which does not meet the requirement of processing orders in the order they are received.
+- **Option C:** Blocking requests using an API Gateway authorizer is not a practical approach to managing order processing order and could lead to increased latency and poor user experience.
+- **Option D:** SQS standard queues do not guarantee the order of message processing, making this option unsuitable for the requirement of sequential order processing.
+
+

@@ -72,6 +72,9 @@ A company uses AWS Organizations to manage multiple AWS accounts for different d
 - **PrincipalOrgID** is a global condition key that allows access to be restricted to all accounts within a specific AWS Organization. By adding this key to the S3 bucket policy with the organization ID, the bucket can be securely accessed only by users in accounts within the organization.
 - **Minimal Operational Overhead:** This approach is straightforward to implement, requires no additional resources or tracking, and automatically applies access controls across all accounts within the organization.
 
+Resource: practise Article https://aws.plainenglish.io/access-aws-s3-buckets-without-internet-connection-ff65ccfd1cc7
+
+
 #### Why Other Options Are Less Suitable:
 
 - **Option B:** Using `aws:PrincipalOrgPaths` would require organizing accounts into specific OUs and managing policies based on path structure, which increases complexity.
